@@ -20,7 +20,7 @@ A API fornece um endpoint para obter o produtor com **maior intervalo** entre pr
 
 ### 2. Acessar o projeto
 cd golden-raspberry-api
-```
+
 
 ### 3. Executar o projeto
 ```sh
