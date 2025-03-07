@@ -17,12 +17,13 @@ class GoldenRaspberryAwardsApplicationTests {
 	@Autowired
 	private MockMvc mockMvc;
 
-    @Test
+	@Test
 	void shouldReturnAwardIntervals() throws Exception {
 		mockMvc.perform(get("/v1/awards/intervals"))
 				.andExpect(status().isOk())
 				.andExpect(jsonPath("$.min").isArray())
-				.andExpect(jsonPath("$.max").isArray());
+				.andExpect(jsonPath("$.max").isArray())
+				.andExpect(jsonPath("$.min[*].interval").value(1))
+				.andExpect(jsonPath("$.max[*].interval").value(13));
 	}
-
 }
